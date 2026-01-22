@@ -1,4 +1,4 @@
-# RLogin Door Server for The Major BBS
+# Door Server for The Major BBS
 
 A modern C# implementation of a door server that accepts RLogin connections from The MajorBBS and launches BBS door games.
 
@@ -14,7 +14,7 @@ A modern C# implementation of a door server that accepts RLogin connections from
 
 ## How It Works
 
-1. MajorBBS/Worldgroup connects via RLogin protocol (port 5103)
+1. The Major BBS connects via RLogin protocol (port 5103)
 2. Server parses RLogin handshake to extract:
    - Username
    - Terminal type
