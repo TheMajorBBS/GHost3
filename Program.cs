@@ -1,0 +1,72 @@
+using System;
+using System.Threading.Tasks;
+
+namespace GHost3
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            bool debugMode = args.Length > 0 && (args[0] == "-debug" || args[0] == "--debug");
+
+            Console.WriteLine("========================================");
+            Console.WriteLine("  GHost3 Door Server for The Major BBS");
+            Console.WriteLine("  Version 1.1.0");
+            Console.WriteLine("========================================");
+            Console.WriteLine();
+
+            var configManager = new ConfigManager();
+            var serverConfig = configManager.LoadConfig();
+
+            Console.WriteLine($"Configuration loaded:");
+            Console.WriteLine($"  RLogin Port: {serverConfig.RLoginPort}");
+            Console.WriteLine($"  Drop File Directory: {serverConfig.DropFileDirectory}");
+            Console.WriteLine($"  Max Sessions: {serverConfig.MaxSessions}");
+            Console.WriteLine($"  Configured Doors: {serverConfig.Doors.Count}");
+            Console.WriteLine($"  Enabled Doors: {serverConfig.Doors.FindAll(d => d.Enabled).Count}");
+            if (debugMode)
+            {
+                Console.WriteLine($"  Debug Mode: ENABLED");
+            }
+            Console.WriteLine();
+
+            if (serverConfig.Doors.FindAll(d => d.Enabled).Count == 0)
+            {
+                Console.WriteLine("WARNING: No doors are enabled!");
+                Console.WriteLine("Edit doorserver.json to enable doors.");
+                Console.WriteLine();
+            }
+
+            var doorConfig = configManager.ToDoorConfig(serverConfig);
+            var server = new GHost3Server(serverConfig.RLoginPort, doorConfig, debugMode);
+
+            // Handle Ctrl+C
+            bool shutdownRequested = false;
+            Console.CancelKeyPress += (sender, e) =>
+            {
+                e.Cancel = true;
+                if (!shutdownRequested)
+                {
+                    shutdownRequested = true;
+                    Console.WriteLine("\nShutdown requested...");
+                    server.Stop();
+                }
+            };
+
+            try
+            {
+                await server.StartAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Server error: {ex.Message}");
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine($"Inner exception: {ex.InnerException.Message}");
+                }
+            }
+
+            Console.WriteLine("Server stopped.");
+        }
+    }
+}

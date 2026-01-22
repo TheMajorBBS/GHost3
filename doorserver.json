@@ -1,0 +1,46 @@
+{
+  "RLoginPort": 5103,
+  "DropFileDirectory": "C:\\GHost3\\NODES",
+  "MaxSessions": 50,
+  "Doors": [
+    {
+      "Code": "BBW",
+      "Name": "BBS Wordle",
+      "ExecutablePath": "C:\\DOORS\\BBW\\BBSWORDLE.EXE",
+      "CommandLine": "-D{NODEDIR}\\DOOR32.SYS",
+      "WorkingDirectory": "C:\\DOORS\\BBW",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""
+    },
+	{
+      "Code": "USP",
+      "Name": "Usurper",
+      "ExecutablePath": "C:\\DOORS\\USP\\USURPER.EXE",
+      "CommandLine": "/N{NODE} /P{NODEDIR}",
+      "WorkingDirectory": "C:\\DOORS\\USP",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""
+    },
+    {
+      "Code": "THT",
+      "Name": "Tree House Truants",
+      "ExecutablePath": "C:\\DOORS\\THT.BAT",
+      "CommandLine": "{NODEDIR} {PORT}",
+      "WorkingDirectory": "C:\\DOORS\\THT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+    },
+	{
+	  "Code": "LOD",
+      "Name": "Land Of Devastation",
+	  "ExecutablePath": "C:\\DOORS\\LOD\\LOD-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "C:\\DOORS\\LOD",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	}]
+}

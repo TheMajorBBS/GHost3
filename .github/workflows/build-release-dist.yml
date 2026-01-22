@@ -1,0 +1,85 @@
+name: Build Release Dist
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '9.0.x'
+    
+    - name: Build x64
+      run: |
+        dotnet publish "GHost3.csproj" -c Release -r win-x64 --self-contained `
+        -p:PublishSingleFile=true `
+        -p:EnableCompressionInSingleFile=true `
+        -p:IncludeNativeLibrariesForSelfExtract=true `
+        -p:DebugType=None `
+        -p:DebugSymbols=false `
+        -o ./publish/win-x64
+    
+    - name: Build x86
+      run: |
+        dotnet publish "GHost3.csproj" -c Release -r win-x86 --self-contained `
+        -p:PublishSingleFile=true `
+        -p:EnableCompressionInSingleFile=true `
+        -p:IncludeNativeLibrariesForSelfExtract=true `
+        -p:DebugType=None `
+        -p:DebugSymbols=false `
+        -o ./publish/win-x86
+    
+    - name: Prepare x64 Release Package
+      run: |
+        New-Item -ItemType Directory -Path ./package/x64
+        Copy-Item ./publish/win-x64/*.exe ./package/x64/
+        Copy-Item ./docs/README.md ./package/x64/
+        Copy-Item ./docs/QUICKSTART.md ./package/x64/
+        Copy-Item ./doorserver.json ./package/x64/
+        
+    - name: Prepare x86 Release Package
+      run: |
+        New-Item -ItemType Directory -Path ./package/x86
+        Copy-Item ./publish/win-x86/*.exe ./package/x86/
+        Copy-Item ./docs/README.md ./package/x86/
+        Copy-Item ./docs/QUICKSTART.md ./package/x86/
+        Copy-Item ./doorserver.json ./package/x86/
+        
+    - name: Create x64 Zip
+      run: |
+        $version = "${{ github.ref_name }}"
+        Compress-Archive -Path ./package/x64/* -DestinationPath "./GHost3-$version-x64.zip"
+    
+    - name: Create x86 Zip
+      run: |
+        $version = "${{ github.ref_name }}"
+        Compress-Archive -Path ./package/x86/* -DestinationPath "./GHost3-$version-x86.zip"
+    
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          GHost3-*.zip
+        generate_release_notes: true
+        body: |
+          ## GHost3 ${{ github.ref_name }}
+          
+          Download the appropriate version for your system:
+          - **GHost3-${{ github.ref_name }}-x64.zip**: For 64-bit Windows
+          - **GHost3-${{ github.ref_name }}-x86.zip**: For 32-bit Windows
+          
+          Each zip contains:
+          - Self-contained executable (no .NET required)
+          - README.md
+          - QUICKSTART.md
+          - doorserver.json
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
