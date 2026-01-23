@@ -287,10 +287,6 @@ namespace GHost3
             {
                 // Door not found
                 await SendMessageAsync("Door not configured.\r\n");
-                await SendMessageAsync("Press any key to exit...\r\n");
-
-                byte[] buffer = new byte[1];
-                await _stream.ReadExactlyAsync(buffer, 0, 1);
                 return;
             }
 
@@ -300,10 +296,6 @@ namespace GHost3
             {
                 Console.WriteLine($"[Session {SessionId}] Unable to create dropfile");
                 await SendMessageAsync("Door configuration error.\r\n");
-                await SendMessageAsync("Press any key to exit...\r\n");
-
-                byte[] buffer = new byte[1];
-                await _stream.ReadExactlyAsync(buffer, 0, 1);
                 return;
             }
             else
