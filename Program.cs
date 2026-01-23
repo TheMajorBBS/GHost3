@@ -11,7 +11,8 @@ namespace GHost3
 
             Console.WriteLine("========================================");
             Console.WriteLine("  GHost3 Door Server for The Major BBS");
-            Console.WriteLine("  Version 1.1.0");
+            Console.WriteLine("  Version 1.1.1\r\n");
+            Console.WriteLine("  Press CTRL-C to exit");
             Console.WriteLine("========================================");
             Console.WriteLine();
 
@@ -24,6 +25,7 @@ namespace GHost3
             Console.WriteLine($"  Max Sessions: {serverConfig.MaxSessions}");
             Console.WriteLine($"  Configured Doors: {serverConfig.Doors.Count}");
             Console.WriteLine($"  Enabled Doors: {serverConfig.Doors.FindAll(d => d.Enabled).Count}");
+            
             if (debugMode)
             {
                 Console.WriteLine($"  Debug Mode: ENABLED");

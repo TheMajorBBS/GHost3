@@ -103,7 +103,8 @@ namespace GHost3
             _listener.Start();
             _running = true;
 
-            Console.WriteLine($"GHost3 Door Server started on port {_port}");
+            CleanupNodeDirectories();
+            Console.WriteLine($"\r\nGHost3 Door Server started on port {_port}");
             Console.WriteLine($"Waiting for connections from The Major BBS");
 
             while (_running)
@@ -150,7 +151,7 @@ namespace GHost3
             CleanupNodeDirectories();
         }
 
-        private void CleanupNodeDirectories()
+        public void CleanupNodeDirectories()
         {
             try
             {
