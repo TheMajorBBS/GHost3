@@ -97,8 +97,86 @@ namespace GHost3
             _debugMode = debugMode;
         }
 
+        private void Debug(string message)
+        {
+            if (_debugMode)
+            {
+                Console.WriteLine(message);
+            }
+        }
+
+        private bool ValidateAndCreateDropFileDirectory()
+        {
+            try
+            {
+                Debug($"Validating drop file directory: {_config.DropFileDirectory}");
+
+                // Check if path is valid
+                if (string.IsNullOrWhiteSpace(_config.DropFileDirectory))
+                {
+                    Console.WriteLine("ERROR: DropFileDirectory is not configured in doorserver.json");
+                    return false;
+                }
+
+                // Try to create the parent directory if it doesn't exist
+                if (!Directory.Exists(_config.DropFileDirectory))
+                {
+                    Debug($"Creating drop file directory: {_config.DropFileDirectory}");
+                    Directory.CreateDirectory(_config.DropFileDirectory);
+                    Console.WriteLine($"Created drop file directory: {_config.DropFileDirectory}");
+                }
+                else
+                {
+                    Debug($"Drop file directory already exists: {_config.DropFileDirectory}");
+                }
+
+                // Verify we can write to it by creating a test file
+                string testFile = Path.Combine(_config.DropFileDirectory, ".ghost3_test");
+                File.WriteAllText(testFile, "test");
+                File.Delete(testFile);
+                Debug("Drop file directory is writable");
+
+                return true;
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine($"ERROR: Permission denied accessing drop file directory: {_config.DropFileDirectory}");
+                if (_debugMode)
+                {
+                    Console.WriteLine($"DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Console.WriteLine($"DEBUG: Stack trace: {ex.StackTrace}");
+                }
+                else
+                {
+                    Console.WriteLine("Run with -debug flag for detailed error information");
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"ERROR: Cannot create or access drop file directory: {_config.DropFileDirectory}");
+                if (_debugMode)
+                {
+                    Console.WriteLine($"DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Console.WriteLine($"DEBUG: Stack trace: {ex.StackTrace}");
+                }
+                else
+                {
+                    Console.WriteLine("Run with -debug flag for detailed error information");
+                }
+                return false;
+            }
+        }
+
         public async Task StartAsync()
         {
+            // Validate drop file directory before starting
+            if (!ValidateAndCreateDropFileDirectory())
+            {
+                Console.WriteLine("\nFailed to initialize drop file directory. Server cannot start.");
+                return;
+            }
+
             _listener = new TcpListener(IPAddress.Any, _port);
             _listener.Start();
             _running = true;
@@ -126,7 +204,16 @@ namespace GHost3
                 {
                     if (_running)
                     {
-                        Console.WriteLine($"Error accepting client: {ex.Message}");
+                        Console.WriteLine($"ERROR: Failed to accept client connection");
+                        if (_debugMode)
+                        {
+                            Debug($"DEBUG: {ex.GetType().Name}: {ex.Message}");
+                            Debug($"DEBUG: Stack trace: {ex.StackTrace}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Run with -debug flag for detailed error information");
+                        }
                     }
                 }
             }
@@ -178,7 +265,12 @@ namespace GHost3
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error during cleanup: {ex.Message}");
+                Console.WriteLine($"Warning: Error during node directory cleanup");
+                if (_debugMode)
+                {
+                    Debug($"DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Debug($"DEBUG: Stack trace: {ex.StackTrace}");
+                }
             }
         }
 
@@ -206,7 +298,16 @@ namespace GHost3
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[Session {sessionId}] Error: {ex.Message}");
+                Console.WriteLine($"[Session {sessionId}] ERROR: Session failed");
+                if (_debugMode)
+                {
+                    Console.WriteLine($"[Session {sessionId}] DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Console.WriteLine($"[Session {sessionId}] DEBUG: Stack trace: {ex.StackTrace}");
+                }
+                else
+                {
+                    Console.WriteLine($"[Session {sessionId}] Run with -debug flag for detailed error information");
+                }
             }
             finally
             {
@@ -424,7 +525,16 @@ namespace GHost3
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[Session {SessionId}] RLogin parse error: {ex.Message}");
+                Console.WriteLine($"[Session {SessionId}] ERROR: RLogin parse error");
+                if (_debugMode)
+                {
+                    Debug($"[Session {SessionId}] DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Debug($"[Session {SessionId}] DEBUG: Stack trace: {ex.StackTrace}");
+                }
+                else
+                {
+                    Console.WriteLine($"[Session {SessionId}] Run with -debug flag for detailed error information");
+                }
                 return null;
             }
         }
@@ -433,7 +543,41 @@ namespace GHost3
         {
             // Create a unique directory for this session
             string nodeDir = Path.Combine(_config.DropFileDirectory, $"NODE{SessionId}");
-            Directory.CreateDirectory(nodeDir);
+
+            try
+            {
+                Debug($"[Session {SessionId}] DEBUG: Creating node directory: {nodeDir}");
+                Directory.CreateDirectory(nodeDir);
+                Debug($"[Session {SessionId}] DEBUG: Node directory created successfully");
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine($"[Session {SessionId}] ERROR: Permission denied creating node directory: {nodeDir}");
+                if (_debugMode)
+                {
+                    Console.WriteLine($"[Session {SessionId}] DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Console.WriteLine($"[Session {SessionId}] DEBUG: Stack trace: {ex.StackTrace}");
+                }
+                else
+                {
+                    Console.WriteLine($"[Session {SessionId}] Run with -debug flag for detailed error information");
+                }
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[Session {SessionId}] ERROR: Failed to create node directory: {nodeDir}");
+                if (_debugMode)
+                {
+                    Console.WriteLine($"[Session {SessionId}] DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Console.WriteLine($"[Session {SessionId}] DEBUG: Stack trace: {ex.StackTrace}");
+                }
+                else
+                {
+                    Console.WriteLine($"[Session {SessionId}] Run with -debug flag for detailed error information");
+                }
+                return string.Empty;
+            }
 
             // Get the native Windows socket handle
             int nativeSocketHandle = GetNativeSocketHandle();
@@ -464,7 +608,12 @@ namespace GHost3
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[Session {SessionId}] Warning: Could not create inheritable handle: {ex.Message}");
+                Console.WriteLine($"[Session {SessionId}] Warning: Could not create inheritable handle");
+                if (_debugMode)
+                {
+                    Debug($"[Session {SessionId}] DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Debug($"[Session {SessionId}] DEBUG: Stack trace: {ex.StackTrace}");
+                }
             }
 
             // Create only the specified drop file format
@@ -505,7 +654,16 @@ namespace GHost3
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[Session {SessionId}] ERROR: Could not create dropfile: {ex.Message}");
+                Console.WriteLine($"[Session {SessionId}] ERROR: Could not create dropfile");
+                if (_debugMode)
+                {
+                    Debug($"[Session {SessionId}] DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Debug($"[Session {SessionId}] DEBUG: Stack trace: {ex.StackTrace}");
+                }
+                else
+                {
+                    Console.WriteLine($"[Session {SessionId}] Run with -debug flag for detailed error information");
+                }
                 return string.Empty;
             }
         }
@@ -542,8 +700,16 @@ namespace GHost3
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[Session {SessionId}] ERROR: Could not get native socket handle: {ex.Message}");
-                Console.WriteLine($"[Session {SessionId}] ERROR: Stack trace: {ex.StackTrace}");
+                Console.WriteLine($"[Session {SessionId}] ERROR: Could not get native socket handle");
+                if (_debugMode)
+                {
+                    Debug($"[Session {SessionId}] DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Debug($"[Session {SessionId}] DEBUG: Stack trace: {ex.StackTrace}");
+                }
+                else
+                {
+                    Console.WriteLine($"[Session {SessionId}] Run with -debug flag for detailed error information");
+                }
                 return -1;
             }
         }
@@ -995,8 +1161,17 @@ namespace GHost3
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[Session {SessionId}] Error launching door: {ex.Message}");
-                await SendMessageAsync($"Error launching door: {ex.Message}\r\n");
+                Console.WriteLine($"[Session {SessionId}] ERROR: Failed to launch door");
+                if (_debugMode)
+                {
+                    Debug($"[Session {SessionId}] DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Debug($"[Session {SessionId}] DEBUG: Stack trace: {ex.StackTrace}");
+                }
+                else
+                {
+                    Console.WriteLine($"[Session {SessionId}] Run with -debug flag for detailed error information");
+                }
+                await SendMessageAsync($"Error launching door. Server administrator: run with -debug flag for details.\r\n");
             }
         }
 
@@ -1084,8 +1259,17 @@ namespace GHost3
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[Session {SessionId}] Error in door relay: {ex.Message}");
-                await SendMessageAsync($"Error launching door: {ex.Message}\r\n");
+                Console.WriteLine($"[Session {SessionId}] ERROR: Door relay failed");
+                if (_debugMode)
+                {
+                    Debug($"[Session {SessionId}] DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Debug($"[Session {SessionId}] DEBUG: Stack trace: {ex.StackTrace}");
+                }
+                else
+                {
+                    Console.WriteLine($"[Session {SessionId}] Run with -debug flag for detailed error information");
+                }
+                await SendMessageAsync($"Error in door relay. Server administrator: run with -debug flag for details.\r\n");
             }
             finally
             {
@@ -1126,8 +1310,12 @@ namespace GHost3
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[Session {SessionId}] Relay error ({direction}): {ex.Message}");
-                Console.WriteLine($"[Session {SessionId}] Stack trace: {ex.StackTrace}");
+                Console.WriteLine($"[Session {SessionId}] ERROR: Relay error ({direction})");
+                if (_debugMode)
+                {
+                    Debug($"[Session {SessionId}] DEBUG: {ex.GetType().Name}: {ex.Message}");
+                    Debug($"[Session {SessionId}] DEBUG: Stack trace: {ex.StackTrace}");
+                }
             }
         }
 
