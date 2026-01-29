@@ -76,6 +76,13 @@ jobs:
           - **GHost3-${{ github.ref_name }}-x64.zip**: For 64-bit Windows
           - **GHost3-${{ github.ref_name }}-x86.zip**: For 32-bit Windows
           
+          Changes:
+          - Fix potential session lock issue
+          - Add NODE directory cleanup on launch/shutdown
+          - Recycle NODE directory name usage
+          - Add additional logging
+          - Validate NODE directory creation
+          
           Each zip contains:
           - Self-contained executable (no .NET required)
           - README.md

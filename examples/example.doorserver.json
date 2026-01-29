@@ -1,0 +1,2588 @@
+{
+  "RLoginPort": 5103,
+  "DropFileDirectory": "E:\\GHost3",
+  "MaxSessions": 20,
+  "Doors": [
+    {
+      "Code": "BBW",
+      "Name": "BBS Wordle",
+      "ExecutablePath": "E:\\doors\\wordle\\BBSWORDLE.EXE",
+      "CommandLine": "-D{NODEDIR}\\DOOR32.SYS",
+      "WorkingDirectory": "E:\\doors\\wordle",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""
+    },
+	{
+      "Code": "USP",
+      "Name": "USurperMP",
+      "ExecutablePath": "E:\\doors\\usurper\\USURPER32.EXE",
+      "CommandLine": "/n{NODE} /p{NODEDIR}",
+      "WorkingDirectory": "E:\\doors\\usurper",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""
+    },
+	{
+      "Code": "DOORMUD",
+      "Name": "DoorMUD",
+      "ExecutablePath": "E:\\DOORS\\DMUD\\DMUD32D.EXE",
+      "CommandLine": "/N {NODE} /D {NODEDIR}\\DOOR32.SYS",
+      "WorkingDirectory": "e:\\DOORS\\DMUD",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""
+    },
+    {
+      "Code": "AMBRO",
+      "Name": "Ambroshia",
+      "ExecutablePath": "E:\\DOORS\\AMBV4\\AMBLaunch.exe",
+      "CommandLine": "/N {NODE} /d {NODEDIR}\\DOOR32.SYS /S",
+      "WorkingDirectory": "E:\\DOORS\\AMBV4",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""
+    },
+    {
+      "Code": "FF2K5",
+      "Name": "Food Fight 2005",
+      "ExecutablePath": "E:\\DOORS\\FF2K5\\FF2K5.EXE",
+      "CommandLine": "-d{NODEDIR}\\DOOR32.SYS",
+      "WorkingDirectory": "E:\\DOORS\\FF2K5",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""
+    },
+    {
+      "Code": "ARENA",
+      "Name": "Arena Warrior",
+      "ExecutablePath": "E:\\DOORS\\arena12\\arena.exe",
+      "CommandLine": "-d{NODEDIR}\\DOOR32.SYS",
+      "WorkingDirectory": "E:\\DOORS\\arena12",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+    {
+      "Code": "LRPG",
+      "Name": "Legion RPG",
+      "ExecutablePath": "E:\\DOORS\\LEGION\\legion.exe",
+      "CommandLine": "/N {NODE} /d {NODEDIR}\\DOOR32.SYS /S",
+      "WorkingDirectory": "E:\\DOORS\\LEGION",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""  
+    },
+    {
+      "Code": "UBOAT",
+      "Name": "U-Boat",
+      "ExecutablePath": "E:\\DOORS\\UBOAT\\UBOAT.EXE",
+      "CommandLine": "{NODE} {NODEDIR}\\DOOR32.SYS /S",
+      "WorkingDirectory": "E:\\DOORS\\UBOAT",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""  
+    },
+    {
+      "Code": "SQ",
+      "Name": "Stellar Quest",
+      "ExecutablePath": "E:\\DOORS\\SQ\\SQUEST.EXE",
+      "CommandLine": "{NODE} {NODEDIR}\\DOOR32.SYS /S",
+      "WorkingDirectory": "E:\\DOORS\\SQ",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""  
+    },
+    {
+      "Code": "GBOWL",
+      "Name": "GuTTeRBoWL",
+      "ExecutablePath": "E:\\DOORS\\BOWL\\gbowl32.EXE",
+      "CommandLine": "/N{NODE} /CE:\\DOORS\\BOWL\\NODE{NODE}.CTL",
+      "WorkingDirectory": "E:\\DOORS\\BOWL",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "FSE",
+      "Name": "FICTITIOUS STOCK MARKET",
+      "ExecutablePath": "E:\\DOORS\\FSE\\MARKET.EXE",
+      "CommandLine": "{NODE} {NODEDIR}\\DOOR32.SYS",
+      "WorkingDirectory": "E:\\DOORS\\FSE",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""  
+    },
+    {
+      "Code": "LOST",
+      "Name": "LOST IN THE SUPERMARKET",
+      "ExecutablePath": "E:\\DOORS\\LOSTSHOP\\LOST.EXE",
+      "CommandLine": "-D {NODEDIR}\\DOOR32.SYS",
+      "WorkingDirectory": "E:\\DOORS\\LOSTSHOP",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "SBBS",
+      "Name": "BBS Simulator",
+      "ExecutablePath": "E:\\DOORS\\SIMBBS\\SIM-BBS.EXE",
+      "CommandLine": "{NODEDIR}\\DOOR32.SYS",
+      "WorkingDirectory": "E:\\DOORS\\SIMBBS",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": "" 
+	},
+    {
+      "Code": "SHOMES",
+      "Name": "Adventures of Sherlock Holmes",
+      "ExecutablePath": "E:\\DOORS\\SH\\Sherlock.EXE",
+      "CommandLine": "{NODE} E:\\GHost3\\NODE{NODE}\\DOOR32.SYS",
+      "WorkingDirectory": "E:\\DOORS\\SH",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "DRK",
+      "Name": "Darkness",
+	  "ExecutablePath": "E:\\DOORS\\DRK\\DARK32.EXE",
+      "CommandLine": "/N{NODE} /PE:\\GHOST3\\NODE{NODE}",
+      "WorkingDirectory": "E:\\DOORS\\DRK",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "DUB",
+      "Name": "DUBLZ",
+	  "ExecutablePath": "E:\\DOORS\\DUB\\DUBLZ32.EXE",
+      "CommandLine": "-N{NODE} -DE:\\GHost3\\NODE{NODE}\\DOOR32.SYS",
+      "WorkingDirectory": "E:\\DOORS\\DUB",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "USURPER",
+      "Name": "Usurper",
+	  "ExecutablePath": "E:\\DOORS\\USURPER25\\USURPER.EXE",
+      "CommandLine": "/n{NODE} /p{NODEDIR}",
+      "WorkingDirectory": "E:\\DOORS\\USURPER25",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "GO",
+      "Name": "Galactic Overlord",
+	  "ExecutablePath": "E:\\DOORS\\GO\\GO-DBX.bat",
+      "CommandLine": "{NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\GO",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "LOD",
+      "Name": "Land Of Devastation",
+	  "ExecutablePath": "E:\\DOORS\\LOD\\LOD-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\LOD",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "OOII",
+      "Name": "Operation Overkill II",
+	  "ExecutablePath": "E:\\DOORS\\OOII\\OOII-DBX.bat",
+      "CommandLine": "{NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\OOII",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "BRE",
+      "Name": "Barren Realms Elite",
+	  "ExecutablePath": "E:\\DOORS\\BRE\\BRE-DBX.bat",
+      "CommandLine": "{NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\BRE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "SS",
+      "Name": "SuperSlots",
+	  "ExecutablePath": "E:\\DOORS\\SS\\SS-DBX.bat",
+      "CommandLine": "{NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\SS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "NY",
+      "Name": "New York 2008",
+	  "ExecutablePath": "E:\\DOORS\\NY\\NY-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\NY",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "FFS",
+      "Name": "Freshwater Fishing Simulator",
+	  "ExecutablePath": "E:\\DOORS\\FFS\\FFS-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\FFS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "ISA",
+      "Name": "InterStellar Annihilation",
+	  "ExecutablePath": "E:\\DOORS\\ISA\\ISA-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\ISA",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+    {
+      "Code": "LEMON",
+      "Name": "LEMONADE!",
+	  "ExecutablePath": "E:\\DOORS\\LEMON\\LEMON-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\LEMON",
+      "DropFileFormat": "DORINFO1.DEF",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "PEN",
+      "Name": "PENTASIM",
+	  "ExecutablePath": "E:\\DOORS\\Pentasim\\PEN-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\Pentasim",
+      "DropFileFormat": "DORINFO1.DEF",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "PIT",
+      "Name": "THEPIT",
+	  "ExecutablePath": "E:\\DOORS\\THEPIT\\PIT-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\THEPIT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "MM",
+      "Name": "Murder Mansion",
+	  "ExecutablePath": "E:\\DOORS\\MM\\MM-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\MM",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "DW2",
+      "Name": "DogWorld ][",
+	  "ExecutablePath": "E:\\DOORS\\DW\\DW-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\DW",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "CLANS",
+      "Name": "The Clans",
+	  "ExecutablePath": "E:\\DOORS\\CLANS\\CLAN-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\CLANS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "STACK",
+      "Name": "Stack'Em!",
+      "ExecutablePath": "E:\\DOORS\\STACK\\STACK-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\STACK",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "AC6",
+      "Name": "Alpha Colony VI",
+      "ExecutablePath": "E:\\DOORS\\AC6\\AC6-DBX.bat",
+      "CommandLine": "{NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\AC6",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "GANG",
+      "Name": "Gangland",
+      "ExecutablePath": "E:\\DOORS\\GANG\\GANG-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\GANG",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "RR",
+      "Name": "ROCKIN RADIO",
+      "ExecutablePath": "E:\\DOORS\\RRADIO\\RADIO-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\RRADIO",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "SUPER",
+      "Name": "Super Recall",
+      "ExecutablePath": "E:\\DOORS\\SUPER\\SUPER-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\SUPER",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "STOOG",
+      "Name": "STOOGE MANIA!",
+      "ExecutablePath": "E:\\DOORS\\STOOG\\STOOG-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\STOOG",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "BOGGLE",
+      "Name": "Mind Boggle",
+      "ExecutablePath": "E:\\DOORS\\BOGGLE\\BOGGLE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\BOGGLE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "FBB",
+      "Name": "Franchise Basketball",
+      "ExecutablePath": "E:\\DOORS\\FBB\\FBB-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\FBB",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "FFB",
+      "Name": "Franchise Football",
+      "ExecutablePath": "E:\\DOORS\\FFB\\FFB-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\FFB",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "FH",
+      "Name": "Franchise Hockey",
+      "ExecutablePath": "E:\\DOORS\\fhkl\\FH-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\FH",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "DMANIA",
+      "Name": "DoorMania",
+      "ExecutablePath": "E:\\DOORS\\DMANIA\\DMANIA-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\DMANIA",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "HILO",
+      "Name": "Deluxe HiLo ",
+      "ExecutablePath": "E:\\DOORS\\HILO\\HILO-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\HILO",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "KINGT",
+      "Name": "King of the Board",
+      "ExecutablePath": "E:\\DOORS\\KINGT\\KINGT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\KINGT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "MP",
+      "Name": "Magic Poker Machine",
+      "ExecutablePath": "E:\\DOORS\\MP\\MP-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\MP",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "POKER",
+      "Name": "POKER SLOT MACHINE",
+      "ExecutablePath": "E:\\DOORS\\POKER\\POKER-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\POKER",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "RIVER",
+      "Name": "Riverboat Blackjack",
+      "ExecutablePath": "E:\\DOORS\\RIVER\\RIVER-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\RIVER",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "SPLU",
+      "Name": "Super Plumber!",
+      "ExecutablePath": "E:\\DOORS\\SPLU\\SPLU-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\SPLU",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "STR",
+      "Name": "Strike 9",
+      "ExecutablePath": "E:\\DOORS\\STR\\STR-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\STR",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "TG",
+      "Name": "Turbo Guppies",
+      "ExecutablePath": "E:\\DOORS\\TG\\TG-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\TG",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "8SLOTS",
+      "Name": "8 W A Y  S L O T S",
+      "ExecutablePath": "E:\\DOORS\\8SLOTS\\8SLOTS-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\8SLOTS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "AWAKE",
+      "Name": "RPG-2100 * THE AWAKENING",
+      "ExecutablePath": "E:\\DOORS\\21001\\AWAKE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\21001",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "AWAKE2",
+      "Name": "RPG-2100*THE WRAITH OF KHALAL",
+      "ExecutablePath": "E:\\DOORS\\21002\\AWAKE2-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\21002",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "AB",
+      "Name": "ARROWBRIDGE II",
+      "ExecutablePath": "E:\\DOORS\\AB\\AB-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\AB",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "AB1",
+      "Name": "ARROWBRIDGE I",
+      "ExecutablePath": "E:\\DOORS\\AB1\\AB1-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\AB1",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "AGG",
+      "Name": "ARM of the GOLD Griffin!",
+      "ExecutablePath": "E:\\DOORS\\AGG\\AGG-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\AGG",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "AOS",
+      "Name": "AVATARS OF SCREAMING STEEL",
+      "ExecutablePath": "E:\\DOORS\\AOS\\AOS-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\AOS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "BAR",
+      "Name": "BarWorld",
+      "ExecutablePath": "E:\\DOORS\\BAR\\BAR-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\BAR",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "BASK",
+      "Name": "Big League BasketBall",
+      "ExecutablePath": "E:\\DOORS\\BASK\\BASK-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\BASK",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "BS",
+      "Name": "Real-Time Battleship",
+      "ExecutablePath": "E:\\DOORS\\BATTLESHIP\\BS-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\BATTLESHIP",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "BINGO",
+      "Name": "Bingo",
+      "ExecutablePath": "E:\\DOORS\\BINGO\\BINGO-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\BINGO",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "BLS",
+      "Name": "Blood Shed",
+      "ExecutablePath": "E:\\DOORS\\BS\\BS-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\BS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "CAMPHR",
+      "Name": "CAMPTOWN RACES",
+      "ExecutablePath": "E:\\DOORS\\CAMPHR\\CAMPHR-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\CAMPHR",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "CASK",
+      "Name": "CAMPTOWN RACES",
+      "ExecutablePath": "E:\\DOORS\\CASK\\CASK-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\CASK",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "CATA",
+      "Name": "CATACOMBS",
+      "ExecutablePath": "E:\\DOORS\\CAT\\CAT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\CAT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "CHAM",
+      "Name": "Chameleon",
+      "ExecutablePath": "E:\\DOORS\\CHAM\\CHAM-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\CHAM",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "CHAOS",
+      "Name": "Primal Chaos",
+      "ExecutablePath": "E:\\DOORS\\CHAOS\\CHAOS-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\CHAOS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "CHR",
+      "Name": "CHAIN REACTION",
+      "ExecutablePath": "E:\\DOORS\\CHR\\CHR-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\CHR",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "DOGP",
+      "Name": "Dogpound",
+      "ExecutablePath": "E:\\DOORS\\DOGP\\DOGP-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\DOGP",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "D2D",
+      "Name": "DUST2DUST",
+      "ExecutablePath": "E:\\DOORS\\D2D\\D2D-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\D2D",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "CON4",
+      "Name": "Real-Time Connect4",
+      "ExecutablePath": "E:\\DOORS\\CONNECT\\CON4-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\CONNECT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "CRASH",
+      "Name": "BBS Crash",
+      "ExecutablePath": "E:\\DOORS\\CRASH\\CRASH-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\CRASH",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "CRAZY8",
+      "Name": "Crazy Eights ",
+      "ExecutablePath": "E:\\DOORS\\CRAZY8\\CRAZY8-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\CRAZY8",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{	
+      "Code": "CS",
+      "Name": "Card Sharks",
+      "ExecutablePath": "E:\\DOORS\\CS\\CS-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\CS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""  
+	},
+	{
+      "Code": "DERBY",
+      "Name": "Kentucky Derby",
+      "ExecutablePath": "E:\\DOORS\\DERBY\\DERBY-GO.BAT",
+      "CommandLine": "{NODE} {NODEDIR}",
+      "WorkingDirectory": "E:\\DOORS\\DERBY",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "DRAKE",
+      "Name": "Drakeville",
+      "ExecutablePath": "E:\\DOORS\\DRA\\DRAKE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\DRA",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "DSOL",
+      "Name": "Double Solitaire",
+      "ExecutablePath": "E:\\DOORS\\DSOL\\DSOL-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\DSOL",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "EXIT",
+      "Name": "Exitilus",
+      "ExecutablePath": "E:\\DOORS\\EXITILUS\\EXIT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\EXITILUS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "FALC",
+      "Name": "Falcon's Eye",
+      "ExecutablePath": "E:\\DOORS\\falconseye\\FALC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\falconseye",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "FH",
+      "Name": "Not Working",
+      "ExecutablePath": "E:\\DOORS\\FH\\FH-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\FH",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "GALE",
+      "Name": "Galactic Empire",
+      "ExecutablePath": "E:\\DOORS\\GALE\\GELE-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\GALE",
+      "DropFileFormat": "DORINFOX.DEF",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "GFEST",
+      "Name": "GRUNT FEST",
+      "ExecutablePath": "E:\\DOORS\\GFEST\\GFEST-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\GFEST",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "GOLD",
+      "Name": "GOLD HUNT",
+      "ExecutablePath": "E:\\DOORS\\GOLD\\GOLD-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\GOLD",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "GWAR",
+      "Name": "GLOBAL WAR",
+      "ExecutablePath": "E:\\DOORS\\GWAR\\WAR-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\GWAR",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "HIROLL",
+      "Name": "Hi Roller",
+      "ExecutablePath": "E:\\DOORS\\HR\\HR-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\HR",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "JEDI",
+      "Name": "Jedi Knights",
+      "ExecutablePath": "E:\\DOORS\\JEDI\\JEDI-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\JEDI",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "JUMBLE",
+      "Name": "JUMBLE",
+      "ExecutablePath": "E:\\DOORS\\JUMBLE\\JUMB-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\JUMBLE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "KABOOM",
+      "Name": "KABOOM",
+      "ExecutablePath": "E:\\DOORS\\KABOOM\\KABOOM-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+      "WorkingDirectory": "E:\\DOORS\\KABOOM",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+    },
+	{
+      "Code": "TESTDISABLE",
+      "Name": "Dark Lands",
+      "ExecutablePath": "E:\\DOORS\\KING\\KING-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\KING",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LASSO",
+      "Name": "LASSO",
+      "ExecutablePath": "E:\\DOORS\\LASSO\\LASSO-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LASSO",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LINKS",
+      "Name": "Links Golf",
+      "ExecutablePath": "E:\\DOORS\\LINKS\\LINKS-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LINKS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LORD355",
+      "Name": "LORD #2",
+      "ExecutablePath": "E:\\DOORS\\LORD\\LORD-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LORD",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LORD406",
+      "Name": "LORD #3",
+      "ExecutablePath": "E:\\DOORS\\LORD406\\LORD-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LORD406",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TLORD2",
+      "Name": "LORD 2",
+      "ExecutablePath": "E:\\DOORS\\LORD2\\LORD2-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LORD2",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LORE",
+      "Name": "LORE",
+      "ExecutablePath": "E:\\DOORS\\LORE\\LORE-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LORE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LOTF",
+      "Name": "Land of the Forgotten",
+      "ExecutablePath": "E:\\DOORS\\LOT\\LOT-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LOT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "MOMUD",
+      "Name": "MOMUD",
+      "ExecutablePath": "E:\\DOORS\\MOMUD\\MOMUD-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\MOMUD",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "MONOP",
+      "Name": "Multipolix",
+      "ExecutablePath": "E:\\DOORS\\MONOP\\MONO-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\MONOP",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SCRAB",
+      "Name": "Scrabble",
+      "ExecutablePath": "E:\\DOORS\\SCRAB\\SCRAB-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\SCRAB",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "MYMAN",
+      "Name": "MystMan",
+      "ExecutablePath": "E:\\DOORS\\MYMAN\\MYMAN-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\MYMAN",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "MYST",
+      "Name": "Mystic Island",
+      "ExecutablePath": "E:\\DOORS\\MYST\\MYST-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\MYST",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "PHAN",
+      "Name": "Phantasia",
+      "ExecutablePath": "E:\\DOORS\\PHAN\\PHAN-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\PHAN",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "PLANETS",
+      "Name": "Planets",
+      "ExecutablePath": "E:\\DOORS\\PLANETS\\PLANTS-DBX.bat",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\PLANETS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "PIMP",
+      "Name": "PIMPWARS",
+      "ExecutablePath": "E:\\DOORS\\PW\\PIMPWARS.EXE",
+      "CommandLine": "{NODEDIR}\\DOOR32.SYS {NODE}",
+	  "WorkingDirectory": "E:\\DOORS\\PW",
+      "DropFileFormat": "DOOR32.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "RASSLE",
+      "Name": "Super Rassle",
+      "ExecutablePath": "E:\\DOORS\\RASSLE\\RASSLE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\RASSLE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "RANCHO",
+      "Name": "Rancho Nevada",
+      "ExecutablePath": "E:\\DOORS\\RN\\RN-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\RN",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "ROAD",
+      "Name": "Road Work",
+      "ExecutablePath": "E:\\DOORS\\ROAD\\ROAD-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\ROAD",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SCRAM",
+      "Name": "Scramble",
+      "ExecutablePath": "E:\\DOORS\\SCRAM\\SCRAM-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\SCRAM",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SHUF",
+      "Name": "WORD SHUFFLE",
+      "ExecutablePath": "E:\\DOORS\\SHUF\\SHUF-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\SHUF",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SICE",
+      "Name": "Steel & Ice",
+      "ExecutablePath": "E:\\DOORS\\SI\\SI-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\SI",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SONG",
+      "Name": "Name that Tune",
+      "ExecutablePath": "E:\\DOORS\\songst\\SONG-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\songst",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TT",
+      "Name": "Time Trials",
+      "ExecutablePath": "E:\\DOORS\\timetrials\\TT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\timetrials",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "JUNK",
+      "Name": "Junkyard",
+      "ExecutablePath": "E:\\DOORS\\TJ\\JV-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TJ",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TPGOLF",
+      "Name": "TPC Golf",
+      "ExecutablePath": "E:\\DOORS\\TPGOLF\\TPGOLF-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TPGOLF",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "VAMP",
+      "Name": "VAMPIRES",
+      "ExecutablePath": "E:\\DOORS\\VAMP\\VAMP-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\VAMP",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WOF",
+      "Name": "Wheel of Fortune",
+      "ExecutablePath": "E:\\DOORS\\WOF\\WOF-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WOF",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WHODUN",
+      "Name": "Who-Dunit",
+      "ExecutablePath": "E:\\DOORS\\WHODUN\\WHODUN-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WHODUN",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WORDPLAY",
+      "Name": "Word Play",
+      "ExecutablePath": "E:\\DOORS\\WORDPLAY\\WORDPLAY-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WORDPLAY",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WORDZ",
+      "Name": "Wordzee",
+      "ExecutablePath": "E:\\DOORS\\WORDZ\\WORDZ-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WORDZ",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WOT",
+      "Name": "Warlords of the Balance",
+      "ExecutablePath": "E:\\DOORS\\WOT\\WOT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WOT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "XTDS",
+      "Name": "Ashrella",
+      "ExecutablePath": "E:\\DOORS\\XTDS\\XTDS-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\XTDS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WLW",
+      "Name": "World League Wrestling",
+      "ExecutablePath": "E:\\DOORS\\WW\\WW-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WW",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "AVA",
+      "Name": "AVALON",
+      "ExecutablePath": "E:\\DOORS\\AV\\AV-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\AV",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "AOC",
+      "Name": "Age of Chivalry",
+      "ExecutablePath": "E:\\DOORS\\BC\\BC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BC",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BOOB",
+      "Name": "Betrayal of the Obsidian Baboon",
+      "ExecutablePath": "E:\\DOORS\\BOOB\\BOOB-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BOOB",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BORD",
+      "Name": "Bordello",
+      "ExecutablePath": "E:\\DOORS\\BORD\\BORD-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BORD",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "DEATH",
+      "Name": "Death Masters",
+      "ExecutablePath": "E:\\DOORS\\DEATH\\DEATH-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\DEATH",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "DUNG",
+      "Name": "DUNGEON MASTERS",
+      "ExecutablePath": "E:\\DOORS\\DM\\DM-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\DM",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "DOZ",
+      "Name": "Defenders of Zentax",
+      "ExecutablePath": "E:\\DOORS\\DOZ\\DOZ-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\DOZ",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "DRAG",
+      "Name": "The Dragon's Claw",
+      "ExecutablePath": "E:\\DOORS\\DRAG\\DRAG-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\DRAG",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "EOW",
+      "Name": "Empires of WAR",
+      "ExecutablePath": "E:\\DOORS\\EAW\\EAW-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\EAW",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "EWAR",
+      "Name": "Evangelist Wars",
+      "ExecutablePath": "E:\\DOORS\\EWAR\\EWAR-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\EWAR",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "FHV",
+      "Name": "Falcon's Honor",
+      "ExecutablePath": "E:\\DOORS\\FHV\\FHV-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\FHV",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "FEYE",
+      "Name": "Falcon's Eye",
+      "ExecutablePath": "E:\\DOORS\\FEYE\\FE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\FEYE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "ARC",
+      "Name": "The Arcadian Legends ",
+      "ExecutablePath": "E:\\DOORS\\ARC\\ARC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\ARC",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "GOC",
+      "Name": "GODFATHER OF CRIME",
+      "ExecutablePath": "E:\\DOORS\\GOC\\GOC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\GOC",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "IRAQ",
+      "Name": "IRAQ-NOIDS",
+      "ExecutablePath": "E:\\DOORS\\IRAQ\\IRAQ-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\IRAQ",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "IRON",
+      "Name": "Iron War",
+      "ExecutablePath": "E:\\DOORS\\IRON\\IRON-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\IRON",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "JAIL",
+      "Name": "JAIL BREAK!",
+      "ExecutablePath": "E:\\DOORS\\JAIL\\JAIL-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\JAIL",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LIL",
+      "Name": "Life in Latexila",
+      "ExecutablePath": "E:\\DOORS\\LIL\\LIL-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LIL",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "MOG",
+      "Name": "Mines of Gorr",
+      "ExecutablePath": "E:\\DOORS\\MINES\\MINES-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\MINES",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "NETR",
+      "Name": "Net Runner",
+      "ExecutablePath": "E:\\DOORS\\NETR\\NETR-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\NETR",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "PAL",
+      "Name": "Paladin",
+      "ExecutablePath": "E:\\DOORS\\PAL\\PAL-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\PAL",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "RAIL",
+      "Name": "WAY FREIGHT",
+      "ExecutablePath": "E:\\DOORS\\RAIL\\RAIL-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\RAIL",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "REBEL",
+      "Name": "Rebel Kingdom",
+      "ExecutablePath": "E:\\DOORS\\RK\\RK-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\RK",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "ROK",
+      "Name": "Realm of Kisom",
+      "ExecutablePath": "E:\\DOORS\\ROK\\ROK-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\ROK",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "RTP",
+      "Name": "Rise to Power",
+      "ExecutablePath": "E:\\DOORS\\RTP\\RTP=DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\RTP",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SDL",
+      "Name": "STARDOCK LOCO",
+      "ExecutablePath": "E:\\DOORS\\SDL\\SD1-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\SDL",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SFC",
+      "Name": "Star Force Commander",
+      "ExecutablePath": "E:\\DOORS\\SFC\\SFC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\SFC",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SOTL",
+      "Name": "SHIP OF THE LINE",
+      "ExecutablePath": "E:\\DOORS\\SOT\\SOT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\SOT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TOPC",
+      "Name": "Top Cop!",
+      "ExecutablePath": "E:\\DOORS\\TC\\TC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TC",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TERRA",
+      "Name": "Terra Firma",
+      "ExecutablePath": "E:\\DOORS\\TERRA\\TERRA-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TERRA",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TFB",
+      "Name": "Task Force Broadside",
+      "ExecutablePath": "E:\\DOORS\\TFB\\TFB-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TFB",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TIMET",
+      "Name": "TIME TRAVEL",
+      "ExecutablePath": "E:\\DOORS\\TIME23\\TT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TIME23",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TMG",
+      "Name": "The Magic Gate",
+      "ExecutablePath": "E:\\DOORS\\TMG\\TMG-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TMG",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "YANK",
+      "Name": "Yankees & Red Necks",
+      "ExecutablePath": "E:\\DOORS\\YANK\\YANK-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\YANK",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "ARENA121",
+      "Name": "ARENA OF THE ANCIENTS",
+      "ExecutablePath": "E:\\DOORS\\ARENA121\\ARENA-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\ARENA121",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "AOGT",
+      "Name": "ARM OF THE GODS",
+      "ExecutablePath": "E:\\DOORS\\AOG\\AOG-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\AOG",
+      "DropFileFormat": "DORINFOX.DEF",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "ARMA",
+      "Name": "Armageddon",
+      "ExecutablePath": "E:\\DOORS\\ARMA\\ARMA-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\ARMA",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BOTA",
+      "Name": "Battle of The Arts",
+      "ExecutablePath": "E:\\DOORS\\BOTA\\BOTA-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BOTA",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "VADER",
+      "Name": "BBS Vaders",
+      "ExecutablePath": "E:\\DOORS\\VADER\\VADER-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\VADER",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BBOGG",
+      "Name": "Big Boggle",
+      "ExecutablePath": "E:\\DOORS\\BOGG\\BOGG-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BOGG",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "ESC",
+      "Name": "Escape Arcade",
+      "ExecutablePath": "E:\\DOORS\\ESC\\ESC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\ESC",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BOXCAR",
+      "Name": "Boxcar Dice",
+      "ExecutablePath": "E:\\DOORS\\BOXCARS\\BOXC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BOXCARS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BUCK",
+      "Name": "Buccaneer",
+      "ExecutablePath": "E:\\DOORS\\BUC\\BUC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BUC",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "CARIB",
+      "Name": "Caribbean Contraband",
+      "ExecutablePath": "E:\\DOORS\\CARIB\\CARIB-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\CARIB",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "CYBER",
+      "Name": "CYBER ARENA",
+      "ExecutablePath": "E:\\DOORS\\CA\\CA-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\CA",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "DW1",
+      "Name": "Dog World 1",
+      "ExecutablePath": "E:\\DOORS\\DW1\\DW1-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\DW1",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "PED",
+      "Name": "Falkenpede",
+      "ExecutablePath": "E:\\DOORS\\PED\\PED-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\PED",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "FARMK",
+      "Name": "Farmers & Kings",
+      "ExecutablePath": "E:\\DOORS\\FK\\FK-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\FK",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "FOH",
+      "Name": "Field of Honor",
+      "ExecutablePath": "E:\\DOORS\\FOH\\FOH-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\FOH",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "JEWEL",
+      "Name": "Funky Jewel Master",
+      "ExecutablePath": "E:\\DOORS\\JEW\\JEW-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\JEW",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "FOODW",
+      "Name": "Food Wars",
+      "ExecutablePath": "E:\\DOORS\\FW\\FW-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\FW",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "GALAXY",
+      "Name": "Galaxy 5",
+      "ExecutablePath": "E:\\DOORS\\GALAXY\\GALAXY-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\GALAXY",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "GOPR",
+      "Name": "Gopher Hunt",
+      "ExecutablePath": "E:\\DOORS\\GOP\\GOP-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\GOP",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "GOTH",
+      "Name": "GOTHIK",
+      "ExecutablePath": "E:\\DOORS\\GOTH\\GOTH-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\GOTH",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "HSA",
+      "Name": "High Seas Armada",
+      "ExecutablePath": "E:\\DOORS\\HSA\\HSA-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\HSA",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "HOBT",
+      "Name": "HOBBIT TRIVIA IV",
+      "ExecutablePath": "E:\\DOORS\\HOBT\\HOBT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\HOBT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "GRUNT",
+      "Name": "GRUNT!",
+      "ExecutablePath": "E:\\DOORS\\GRUNT\\GRUNT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\GRUNT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "IMP",
+      "Name": "IMPERIUM",
+      "ExecutablePath": "E:\\DOORS\\IMP\\IMP-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\IMP",
+      "DropFileFormat": "DORINFOX.DEF",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "INFERNO",
+      "Name": "INFERNO",
+      "ExecutablePath": "E:\\DOORS\\INFERNO\\INFERNO-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\INFERNO",
+      "DropFileFormat": "DORINFOX.DEF",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "KANDK",
+      "Name": "Kannons and Katapults",
+      "ExecutablePath": "E:\\DOORS\\KANDK\\KK-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\KANDK",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "KINGD",
+      "Name": "Kingdom Come",
+      "ExecutablePath": "E:\\DOORS\\KINGDOM\\KINGD-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\KINGDOM",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "KINGDOMS",
+      "Name": "Kingdoms",
+      "ExecutablePath": "E:\\DOORS\\KINGDOMS\\KINGD-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\KINGDOMS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "KUMITE",
+      "Name": "Kumite",
+      "ExecutablePath": "E:\\DOORS\\KUMITE\\KUMITE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\KUMITE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "CROM",
+      "Name": "Lands of Crom",
+      "ExecutablePath": "E:\\DOORS\\CROM\\CROM-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\CROM",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LIFED",
+      "Name": "Life and Death",
+      "ExecutablePath": "E:\\DOORS\\LIFED\\LIFED-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LIFED",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+    },
+	{
+      "Code": "MDK",
+      "Name": "Mad King's Dungeon",
+      "ExecutablePath": "E:\\DOORS\\MKD\\MKD-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\MKD",
+      "DropFileFormat": "DORINFOX.DEF",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "HOUND",
+      "Name": "Mutant Hoard",
+      "ExecutablePath": "E:\\DOORS\\HOUND\\HOUND-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\HOUND",
+      "DropFileFormat": "DORINFOX.DEF",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "POL1",
+      "Name": "Polaris Strike 1",
+      "ExecutablePath": "E:\\DOORS\\POL1\\POL1-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\POL1",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "POL2",
+      "Name": "Polaris Strike 2",
+      "ExecutablePath": "E:\\DOORS\\POL2\\POL2-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\POL2",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "QCLIMB",
+      "Name": "QuadClimb",
+      "ExecutablePath": "E:\\DOORS\\QCLIMB\\QCLIMB-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\QCLIMB",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "RATH",
+      "Name": "Rathmore",
+      "ExecutablePath": "E:\\DOORS\\RATH\\RATH-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\RATH",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SKI",
+      "Name": "Ski Simulator",
+      "ExecutablePath": "E:\\DOORS\\SKI\\SKI-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\SKI",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "DYNS",
+      "Name": "Space Dynasty",
+      "ExecutablePath": "E:\\DOORS\\DYNS\\DYNS-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\DYNS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SUM",
+      "Name": "Summation!",
+      "ExecutablePath": "E:\\DOORS\\SUM\\SUM-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\SUM",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SPADES",
+      "Name": "TC Spades",
+      "ExecutablePath": "E:\\DOORS\\TSC\\TSC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TSC",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "COVE",
+      "Name": "The Cove",
+      "ExecutablePath": "E:\\DOORS\\COVE\\COVE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\COVE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "THUN",
+      "Name": "THUNDER VALLEY",
+      "ExecutablePath": "E:\\DOORS\\THUN\\THUN-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\THUN",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TOC",
+      "Name": "Time of Chaos",
+      "ExecutablePath": "E:\\DOORS\\TOC\\TOC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TOC",
+      "DropFileFormat": "DORINFOX.DEF",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TRAC",
+      "Name": "Tractor Pull Nationals",
+      "ExecutablePath": "E:\\DOORS\\TRAC\\TRAC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TRAC",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TNT",
+      "Name": "TreeHouse Truants",
+      "ExecutablePath": "E:\\DOORS\\TNT\\TNT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TNT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "YERT",
+      "Name": "YERTLE",
+      "ExecutablePath": "E:\\DOORS\\YERT\\YERT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\YERT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "ZOMB",
+      "Name": "Zombie Slots",
+      "ExecutablePath": "E:\\DOORS\\ZOMB\\ZOMB-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\ZOMB",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "VEST",
+      "Name": "Vestlands Enchanted Castle",
+      "ExecutablePath": "E:\\DOORS\\VEST\\VEST-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\VEST",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "VHUNT",
+      "Name": "Virtual Hunt",
+      "ExecutablePath": "E:\\DOORS\\VHUNT\\VHUNT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\VHUNT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WARA",
+      "Name": "WAR! : Battlefield America",
+      "ExecutablePath": "E:\\DOORS\\WARA\\WARA-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WARA",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WILDW",
+      "Name": "WILDWEST",
+      "ExecutablePath": "E:\\DOORS\\WILDW\\WILDW-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WILDW",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WIZ",
+      "Name": "Wizard's Arena",
+      "ExecutablePath": "E:\\DOORS\\WA\\WA-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WA",
+      "DropFileFormat": "DORINFOX.DEF",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "W3D",
+      "Name": "Wizard Maze 3D",
+      "ExecutablePath": "E:\\DOORS\\W3D\\W3D-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\W3D",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "3PP",
+      "Name": "3 Pair Poker",
+      "ExecutablePath": "E:\\DOORS\\3PAIRPOKER\\3PP-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\3PAIRPOKER",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "4CORN",
+      "Name": "4 Corner Checkers",
+      "ExecutablePath": "E:\\DOORS\\4CORN\\4CORN-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\4CORN",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "ACEYD",
+      "Name": "Acey Deucey",
+      "ExecutablePath": "E:\\DOORS\\ACEYD\\ACEYD-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\ACEYD",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BBD",
+      "Name": "Baseball Dice",
+      "ExecutablePath": "E:\\DOORS\\BBDICE\\BBDICE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BBDICE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BRS",
+      "Name": "BETSY ROSS Solitaire",
+      "ExecutablePath": "E:\\DOORS\\BR\\BR-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BR",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BJACK",
+      "Name": "BlackJack",
+      "ExecutablePath": "E:\\DOORS\\BJACK\\BJACK-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BJACK",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BDICE",
+      "Name": "Box Dice",
+      "ExecutablePath": "E:\\DOORS\\BOXDICE\\BOXDICE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BOXDICE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BPOKER",
+      "Name": "Box Poker",
+      "ExecutablePath": "E:\\DOORS\\BPOKER\\BPOKER-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BPOKER",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "COLONY",
+      "Name": "Colonies",
+      "ExecutablePath": "E:\\DOORS\\COLONY\\COLONY-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\COLONY",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "CONC",
+      "Name": "CONCENTRATION",
+      "ExecutablePath": "E:\\DOORS\\CONC\\CONC-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\CONC",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "CRYPTO",
+      "Name": "CRYPTOGRAMS",
+      "ExecutablePath": "E:\\DOORS\\CRYPTO\\CRYPTO-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\CRYPTO",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "DOMIN",
+      "Name": "Dominoes",
+      "ExecutablePath": "E:\\DOORS\\DOMIN\\DOMIN-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\DOMIN",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "GROD",
+      "Name": "GROAN DIce",
+      "ExecutablePath": "E:\\DOORS\\GROANDICE\\GD-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\GROANDICE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "HACK",
+      "Name": "HACKARAMA!",
+      "ExecutablePath": "E:\\DOORS\\HACK\\HACK-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\HACK",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "HEXXW",
+      "Name": "Hexx Wars",
+      "ExecutablePath": "E:\\DOORS\\HEXXWARS\\HEXXW-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\HEXXWARS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "HILO1",
+      "Name": "H I  -  L O",
+      "ExecutablePath": "E:\\DOORS\\HILO1\\HILO1-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\HILO1",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "KENO",
+      "Name": "KENO",
+      "ExecutablePath": "E:\\DOORS\\KENO\\KENO-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\KENO",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LDICE",
+      "Name": "Ladder Dice",
+      "ExecutablePath": "E:\\DOORS\\LDICE\\LDICE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LDICE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LMATCH",
+      "Name": "Letters Match",
+      "ExecutablePath": "E:\\DOORS\\LMATCH\\LMATCH-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LMATCH",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LIS",
+      "Name": "Lost in Space",
+      "ExecutablePath": "E:\\DOORS\\LIS\\LIS-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LIS",
+      "DropFileFormat": "DORINFOX.DEF",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LOTTOM",
+      "Name": "LOTTO MANIA!",
+      "ExecutablePath": "E:\\DOORS\\LOTTOM\\LOTTOM-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LOTTOM",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "MONTE",
+      "Name": "Monte Carlo Solitaire",
+      "ExecutablePath": "E:\\DOORS\\MONTE\\MONTE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\MONTE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "OVERU",
+      "Name": "Over & Under Solitaire",
+      "ExecutablePath": "E:\\DOORS\\OVERU\\OVERU-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\OVERU",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "RESCUE",
+      "Name": "RESCUE",
+      "ExecutablePath": "E:\\DOORS\\RESCUE\\RESCUE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\RESCUE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "ROCKLAND",
+      "Name": "Rockland Trivia",
+      "ExecutablePath": "E:\\DOORS\\ROCKLAND\\ROCKLAND-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\ROCKLAND",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SKYCOP",
+      "Name": "SKYCOP",
+      "ExecutablePath": "E:\\DOORS\\SKYCOP\\SKYCOP-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\SKYCOP",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "STAIR",
+      "Name": "Stairway",
+      "ExecutablePath": "E:\\DOORS\\STAIR\\STAIR-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\STAIR",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "STATES",
+      "Name": "STATES",
+      "ExecutablePath": "E:\\DOORS\\STATES\\STATES-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\STATES",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TRIANGLE",
+      "Name": "Triangle Solitaire",
+      "ExecutablePath": "E:\\DOORS\\TRIANGLE\\TRIANGLE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TRIANGLE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SUNTRI",
+      "Name": "Sunrise Trivia",
+      "ExecutablePath": "E:\\DOORS\\TRIVIA\\TRIVIA-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TRIVIA",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "VIRT",
+      "Name": "Virtual Escape",
+      "ExecutablePath": "E:\\DOORS\\VIRT\\VIRT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\VIRT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WORDS",
+      "Name": "Word Search",
+      "ExecutablePath": "E:\\DOORS\\WORDS\\WORDS-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WORDS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WORDSH",
+      "Name": "Word Shuffle",
+      "ExecutablePath": "E:\\DOORS\\WORDSH\\WORDSH-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WORDSH",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WORDWAR",
+      "Name": "Word War",
+      "ExecutablePath": "E:\\DOORS\\WORDWAR\\WORDWAR-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WORDWAR",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "WWARP",
+      "Name": "Word Warp",
+      "ExecutablePath": "E:\\DOORS\\WWARP\\WWARP-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\WWARP",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SWEEPS",
+      "Name": "SWEEPSTAKES DICE",
+      "ExecutablePath": "E:\\DOORS\\SWEEPS\\SWEEPS-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\SWEEPS",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "YAHT",
+      "Name": "YAHTZEE",
+      "ExecutablePath": "E:\\DOORS\\YAHTZEE\\YAHTZEE-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\YAHTZEE",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "TRIT",
+      "Name": "Tri Towers",
+      "ExecutablePath": "E:\\DOORS\\TRIT\\TRIT-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\TRIT",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BOOBY",
+      "Name": "Booby Trap",
+      "ExecutablePath": "E:\\DOORS\\booby\\booby-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\booby",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BOWLSOL",
+      "Name": "Bowling Solitaire",
+      "ExecutablePath": "E:\\DOORS\\BOWLSOL\\BSOL-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BOWLSOL",
+      "DropFileFormat": "door.sys",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BB",
+      "Name": "Boydian Blocks",
+      "ExecutablePath": "E:\\DOORS\\BB\\BB-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BB",
+      "DropFileFormat": "door.sys",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "SAD",
+      "Name": "Search and Destroy",
+      "ExecutablePath": "E:\\DOORS\\SAD\\SAD-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\SAD",
+      "DropFileFormat": "door.sys",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BOWL1",
+      "Name": "BOWLING",
+      "ExecutablePath": "E:\\DOORS\\BOWL1\\BOWL1-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BOWL1",
+      "DropFileFormat": "DORINFOX.DEF",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "BOXING",
+      "Name": "BOXING",
+      "ExecutablePath": "E:\\DOORS\\BOXING\\BOXING-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\BOXING",
+      "DropFileFormat": "DORINFOX.DEF",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "GREED",
+      "Name": "G R E E D Y !",
+      "ExecutablePath": "E:\\DOORS\\GREEDY\\GREED-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\GREEDY",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "KINGSC",
+      "Name": "King's Crown",
+      "ExecutablePath": "E:\\DOORS\\KING\\KING-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\KING",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "LUN",
+      "Name": "Lunatix",
+      "ExecutablePath": "E:\\DOORS\\LUNATIX\\LUN-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\LUNATIX",
+      "DropFileFormat": "DOOR.SYS",
+      "Enabled": true,
+      "Description": ""
+	},
+	{
+      "Code": "GOLF1",
+      "Name": "BBS Golf",
+      "ExecutablePath": "E:\\DOORS\\GOLF\\GOLF-DBX.BAT",
+      "CommandLine": "{NODE} {NODEDIR} {PORT}",
+	  "WorkingDirectory": "E:\\DOORS\\GOLF",
+      "DropFileFormat": "DORINFOX.DEF",
+      "Enabled": true,
+      "Description": ""
+	}
+  ]
+}
+
