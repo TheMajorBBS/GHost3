@@ -83,7 +83,6 @@ namespace GHost3
         private bool _running;
         private readonly int _port;
         private readonly Dictionary<int, DoorSession> _activeSessions;
-        private int _nextSessionId;
         private readonly object _sessionLock = new object();
         private readonly DoorConfig _config;
         private readonly bool _debugMode;
@@ -92,7 +91,6 @@ namespace GHost3
         {
             _port = port;
             _activeSessions = new Dictionary<int, DoorSession>();
-            _nextSessionId = 1;
             _config = config ?? new DoorConfig();
             _debugMode = debugMode;
         }
@@ -279,7 +277,11 @@ namespace GHost3
             int sessionId;
             lock (_sessionLock)
             {
-                sessionId = _nextSessionId++;
+                sessionId = 1;
+                while (_activeSessions.ContainsKey(sessionId))
+                {
+                    sessionId++;
+                }
             }
 
             Console.WriteLine($"[Session {sessionId}] New connection from {client.Client.RemoteEndPoint}");
@@ -347,6 +349,8 @@ namespace GHost3
         private readonly DoorConfig _config;
         private readonly bool _debugMode;
         private RLoginInfo? _rloginInfo = null;
+        private string? _nodeDirectory = null;
+
 
         public DoorSession(int sessionId, TcpClient client, DoorConfig config, bool debugMode = false)
         {
@@ -543,6 +547,7 @@ namespace GHost3
         {
             // Create a unique directory for this session
             string nodeDir = Path.Combine(_config.DropFileDirectory, $"NODE{SessionId}");
+            _nodeDirectory = nodeDir;
 
             try
             {
@@ -1330,6 +1335,24 @@ namespace GHost3
         {
             _stream?.Dispose();
             _client?.Dispose();
+
+            if (!string.IsNullOrEmpty(_nodeDirectory) && Directory.Exists(_nodeDirectory))
+            {
+                try
+                {
+                    Directory.Delete(_nodeDirectory, true);
+                    Console.WriteLine($"[Session {SessionId}] Cleaned up node directory: {Path.GetFileName(_nodeDirectory)}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[Session {SessionId}] Warning: Could not delete node directory: {ex.Message}");
+                    if (_debugMode)
+                    {
+                        Debug($"[Session {SessionId}] DEBUG: {ex.GetType().Name}: {ex.Message}");
+                        Debug($"[Session {SessionId}] DEBUG: Stack trace: {ex.StackTrace}");
+                    }
+                }
+            }
         }
     }
 
