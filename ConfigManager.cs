@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -73,10 +74,32 @@ namespace GHost3
     /// </summary>
     public class ServerConfig
     {
+        public string ListenAddress { get; set; } = "0.0.0.0";
         public int RLoginPort { get; set; } = 5103;
         public string DropFileDirectory { get; set; } = "";
         public int MaxSessions { get; set; } = 10;
         public List<DoorDefinition> Doors { get; set; } = new List<DoorDefinition>();
+
+        /// <summary>
+        /// Parses and validates ListenAddress, returning the corresponding IPAddress.
+        /// Exits the process with an error message if the value is invalid.
+        /// </summary>
+        public IPAddress GetListenIPAddress()
+        {
+            if (string.IsNullOrWhiteSpace(ListenAddress) || ListenAddress == "0.0.0.0")
+                return IPAddress.Any;
+
+            if (ListenAddress == "::" || ListenAddress == "[::]")
+                return IPAddress.IPv6Any;
+
+            if (IPAddress.TryParse(ListenAddress, out var address))
+                return address;
+
+            Console.WriteLine($"ERROR: Invalid ListenAddress '{ListenAddress}' in doorserver.json.");
+            Console.WriteLine("Use a valid IPv4 address (e.g. 192.168.1.10), IPv6 address, or 0.0.0.0 to listen on all interfaces.");
+            Environment.Exit(1);
+            return IPAddress.Any; // unreachable
+        }
     }
 
     /// <summary>

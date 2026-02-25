@@ -1,4 +1,5 @@
 {
+  "ListenAddress": "0.0.0.0",
   "RLoginPort": 5103,
   "DropFileDirectory": "E:\\GHost3",
   "MaxSessions": 20,
