@@ -111,11 +111,11 @@ namespace GHost3
             {
                 var primary = Dns.GetHostAddresses(Dns.GetHostName())
                     .FirstOrDefault(a => a.AddressFamily == AddressFamily.InterNetwork && !IPAddress.IsLoopback(a));
-                return primary != null ? $"{primary} (all interfaces)" : "0.0.0.0";
+                return primary != null ? primary.ToString() : "0.0.0.0 (all interfaces)";
             }
             catch
             {
-                return "0.0.0.0";
+                return "0.0.0.0 (all interfaces)";
             }
         }
 

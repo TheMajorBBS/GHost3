@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -92,13 +94,56 @@ namespace GHost3
             if (ListenAddress == "::" || ListenAddress == "[::]")
                 return IPAddress.IPv6Any;
 
-            if (IPAddress.TryParse(ListenAddress, out var address))
-                return address;
+            if (!IPAddress.TryParse(ListenAddress, out var address))
+            {
+                Console.WriteLine($"ERROR: Invalid ListenAddress '{ListenAddress}' in doorserver.json.");
+                Console.WriteLine("Use a valid IPv4 address (e.g. 192.168.1.10), IPv6 address, or 0.0.0.0 to listen on all interfaces.");
+                Environment.Exit(1);
+                return IPAddress.Any; // unreachable
+            }
 
-            Console.WriteLine($"ERROR: Invalid ListenAddress '{ListenAddress}' in doorserver.json.");
-            Console.WriteLine("Use a valid IPv4 address (e.g. 192.168.1.10), IPv6 address, or 0.0.0.0 to listen on all interfaces.");
-            Environment.Exit(1);
-            return IPAddress.Any; // unreachable
+            // Reject partial IPv4 addresses that IPAddress.TryParse accepts but are not dotted-quad.
+            // e.g. "192" parses as 0.0.0.192 — the round-trip check catches this.
+            if (address.AddressFamily == AddressFamily.InterNetwork &&
+                address.ToString() != ListenAddress.Trim())
+            {
+                Console.WriteLine($"ERROR: Invalid ListenAddress '{ListenAddress}' in doorserver.json.");
+                Console.WriteLine("Use a valid IPv4 address in dotted-quad form (e.g. 192.168.1.10) or 0.0.0.0 to listen on all interfaces.");
+                Environment.Exit(1);
+                return IPAddress.Any; // unreachable
+            }
+
+            // Verify the address is actually assigned to a network interface on this machine.
+            try
+            {
+                bool found = false;
+                foreach (var ni in NetworkInterface.GetAllNetworkInterfaces())
+                {
+                    foreach (var ua in ni.GetIPProperties().UnicastAddresses)
+                    {
+                        if (ua.Address.Equals(address))
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (found) break;
+                }
+
+                if (!found)
+                {
+                    Console.WriteLine($"ERROR: ListenAddress '{ListenAddress}' is not assigned to any network interface on this machine.");
+                    Console.WriteLine("Check your network configuration or use 0.0.0.0 to listen on all interfaces.");
+                    Environment.Exit(1);
+                    return IPAddress.Any; // unreachable
+                }
+            }
+            catch
+            {
+                // If interface enumeration fails, let the bind attempt surface the error naturally.
+            }
+
+            return address;
         }
     }
 
