@@ -11,7 +11,7 @@ namespace GHost3
 
             Console.WriteLine("========================================");
             Console.WriteLine("  GHost3 Door Server for The Major BBS");
-            Console.WriteLine("  Version 1.3.0\r\n");
+            Console.WriteLine("  Version 1.2.3\r\n");
             Console.WriteLine("  Press CTRL-C to exit");
             Console.WriteLine("========================================");
             Console.WriteLine();
