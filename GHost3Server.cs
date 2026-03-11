@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -82,17 +83,40 @@ namespace GHost3
         private TcpListener? _listener;
         private bool _running;
         private readonly int _port;
+        private readonly IPAddress _listenAddress;
         private readonly Dictionary<int, DoorSession> _activeSessions;
         private readonly object _sessionLock = new object();
         private readonly DoorConfig _config;
         private readonly bool _debugMode;
 
-        public GHost3Server(int port = 513, DoorConfig? config = null, bool debugMode = false)
+        public GHost3Server(int port = 513, IPAddress? listenAddress = null, DoorConfig? config = null, bool debugMode = false)
         {
             _port = port;
+            _listenAddress = listenAddress ?? IPAddress.Any;
             _activeSessions = new Dictionary<int, DoorSession>();
             _config = config ?? new DoorConfig();
             _debugMode = debugMode;
+        }
+
+        /// <summary>
+        /// Returns a display-friendly address string. When bound to all interfaces (0.0.0.0),
+        /// resolves and shows the machine's primary local IPv4 address instead.
+        /// </summary>
+        internal static string GetDisplayAddress(IPAddress address)
+        {
+            if (!address.Equals(IPAddress.Any))
+                return address.ToString();
+
+            try
+            {
+                var primary = Dns.GetHostAddresses(Dns.GetHostName())
+                    .FirstOrDefault(a => a.AddressFamily == AddressFamily.InterNetwork && !IPAddress.IsLoopback(a));
+                return primary != null ? primary.ToString() : "0.0.0.0 (all interfaces)";
+            }
+            catch
+            {
+                return "0.0.0.0 (all interfaces)";
+            }
         }
 
         private void Debug(string message)
@@ -175,12 +199,12 @@ namespace GHost3
                 return;
             }
 
-            _listener = new TcpListener(IPAddress.Any, _port);
+            _listener = new TcpListener(_listenAddress, _port);
             _listener.Start();
             _running = true;
 
             CleanupNodeDirectories();
-            Console.WriteLine($"\r\nGHost3 Door Server started on port {_port}");
+            Console.WriteLine($"\r\nGHost3 Door Server started on {GetDisplayAddress(_listenAddress)}:{_port}");
             Console.WriteLine($"Waiting for connections from The Major BBS");
 
             while (_running)

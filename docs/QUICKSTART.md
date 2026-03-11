@@ -27,10 +27,21 @@ GHost3.exe -debug
 
 ## Configuration
 
+### Configuration Reference
+
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `ListenAddress` | string | `"0.0.0.0"` | IP address the server binds to. Use `"0.0.0.0"` for all interfaces, or a specific IP (e.g. `"192.168.1.10"`) to restrict to one NIC. |
+| `RLoginPort` | int | `5103` | TCP port to listen on for RLogin connections. |
+| `DropFileDirectory` | string | | Directory where node subdirectories and drop files are created. |
+| `MaxSessions` | int | `10` | Maximum number of simultaneous door sessions. |
+| `Doors` | array | | List of door definitions (see below). |
+
 ### Sample doorserver.json
 
 ```json
 {
+  "ListenAddress": "0.0.0.0",
   "RLoginPort": 5103,
   "DropFileDirectory": "C:\\GHost3",
   "MaxSessions": 50,
