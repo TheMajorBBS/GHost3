@@ -412,6 +412,11 @@ namespace GHost3
             Console.WriteLine($"[Session {SessionId}] RLogin from {Username}, Door: {DoorName}");
             Console.WriteLine($"[Session {SessionId}] Terminal: {_rloginInfo.TerminalType}");
 
+            // TAG SUPPORT: Log the BBS tag if one was extracted from the username
+            if (!string.IsNullOrEmpty(_rloginInfo.BbsTag))
+                Console.WriteLine($"[Session {SessionId}] BBS Origin Tag: [{_rloginInfo.BbsTag}]");
+            // END TAG SUPPORT
+
             // Look up door configuration
             if (!_config.Doors.TryGetValue(DoorName, out var doorInfo))
             {
@@ -436,6 +441,60 @@ namespace GHost3
                 await LaunchDoorAsync(doorInfo, dropFilePath);
             }
         }
+
+        // ---------------------------------------------------------------------------
+        // TAG SUPPORT: BuildTaggedUsername
+        //
+        // Builds the drop-file username from the rlogin ServerUsername field (strings[1]),
+        // which is sent in [TAG]username format (e.g. "[PPB]mark").
+        // The tag is prepended to the username so players from different BBSes are
+        // treated as distinct users in door games.
+        //
+        //   Prepend          : [PPB]mark  ->  PPBmark
+        //   PrependUnderscore: [PPB]mark  ->  PPB_mark
+        //
+        // If strings[1] has no [TAG] prefix, returns it unchanged and sets bbsTag = "".
+        // ---------------------------------------------------------------------------
+        private static string BuildTaggedUsername(string serverUsername, TagParsingMode mode, out string bbsTag)
+        {
+            bbsTag = "";
+
+            // Nothing to do if disabled or empty
+            if (mode == TagParsingMode.Disabled || string.IsNullOrEmpty(serverUsername))
+                return serverUsername;
+
+            // Tag must start with '[' — quick exit if not present
+            if (!serverUsername.StartsWith("["))
+                return serverUsername;
+
+            int closingBracket = serverUsername.IndexOf(']');
+            if (closingBracket <= 1) // need at least one character between brackets
+                return serverUsername;
+
+            string extractedTag = serverUsername.Substring(1, closingBracket - 1);
+            string username     = serverUsername.Substring(closingBracket + 1);
+
+            if (string.IsNullOrEmpty(username))
+                return serverUsername;
+
+            bbsTag = extractedTag;
+
+            // PrependUnderscore: TAG_username (e.g. PPB_mark)
+            if (mode == TagParsingMode.PrependUnderscore)
+                return extractedTag + "_" + username;
+
+            // Append: usernameTAG (e.g. markPPB)
+            if (mode == TagParsingMode.Append)
+                return username + extractedTag;
+
+            // AppendUnderscore: username_TAG (e.g. mark_PPB)
+            if (mode == TagParsingMode.AppendUnderscore)
+                return username + "_" + extractedTag;
+
+            // Prepend: TAGusername (e.g. PPBmark)
+            return extractedTag + username;
+        }
+        // ---------------------------------------------------------------------------
 
         private async Task<RLoginInfo?> ParseRLoginHandshakeAsync()
         {
@@ -509,6 +568,27 @@ namespace GHost3
                             info.ClientUsername = strings[0];
                             info.ServerUsername = strings[1];
                             info.TerminalType = strings[2];
+
+                            // TAG SUPPORT: If tag mode is enabled, build the drop-file username from
+                            // strings[1] which contains the tagged username in [TAG]username format
+                            // (e.g. "[PPB]mark"). This produces "PPBmark" or "PPB_mark" so that
+                            // players from different BBSes are treated as distinct users in door games.
+                            if (_config.TagParsingMode != TagParsingMode.Disabled)
+                            {
+                                string tagSource = info.ServerUsername; // strings[1]: "[PPB]mark"
+                                info.ClientUsername = BuildTaggedUsername(tagSource, _config.TagParsingMode, out string extractedTag);
+                                info.BbsTag = extractedTag;
+
+                                if (!string.IsNullOrEmpty(info.BbsTag))
+                                {
+                                    Console.WriteLine($"[Session {SessionId}] BBS tag: [{info.BbsTag}] -> Username: {info.ClientUsername}");
+                                }
+                                else
+                                {
+                                    Debug($"[Session {SessionId}] DEBUG: Tag mode enabled but no [TAG] found in server username '{tagSource}'");
+                                }
+                            }
+                            // END TAG SUPPORT
                         }
                         else
                         {
@@ -1390,6 +1470,13 @@ namespace GHost3
         public string TerminalType { get; set; } = "";
         public string DoorName { get; set; } = "";
         public int BaudRate { get; set; } = 9600;
+
+        // TAG SUPPORT: Stores the BBS tag extracted from the raw ClientUsername.
+        // Example: if raw username was "[DP]_JohnDoe", BbsTag = "DP" and
+        // ClientUsername is updated to "JohnDoe" before the drop file is written.
+        // Empty string when no tag was found or tag parsing is disabled.
+        /// <summary>BBS tag extracted from the raw rlogin username (e.g. "DP" from "[DP]_JohnDoe"). Empty if none.</summary>
+        public string BbsTag { get; set; } = "";
     }
 
     /// <summary>
@@ -1399,6 +1486,10 @@ namespace GHost3
     {
         public string DropFileDirectory { get; set; } = Path.Combine(Path.GetTempPath(), "DoorServer");
         public Dictionary<string, DoorInfo> Doors { get; set; } = new Dictionary<string, DoorInfo>();
+
+        // TAG SUPPORT: Carries the tag parsing mode from ServerConfig into the runtime session.
+        /// <summary>BBS rlogin tag parsing mode (carried from ServerConfig via ToDoorConfig).</summary>
+        public TagParsingMode TagParsingMode { get; set; } = TagParsingMode.Disabled;
     }
 
     /// <summary>

@@ -7,11 +7,12 @@ namespace GHost3
     {
         static async Task Main(string[] args)
         {
-            bool debugMode = args.Length > 0 && (args[0] == "-debug" || args[0] == "--debug");
+            // Check any argument position for the debug flag, not just the first.
+            bool debugMode = Array.Exists(args, a => a == "-debug" || a == "--debug");
 
             Console.WriteLine("========================================");
             Console.WriteLine("  GHost3 Door Server for The Major BBS");
-            Console.WriteLine("  Version 1.2.3\r\n");
+            Console.WriteLine("  Version 1.3.0\r\n");
             Console.WriteLine("  Press CTRL-C to exit");
             Console.WriteLine("========================================");
             Console.WriteLine();

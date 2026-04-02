@@ -2,6 +2,10 @@
 
 A modern C# implementation of a door server that accepts RLogin connections from The MajorBBS and launches BBS door games.
 
+## What's New in v1.3.0
+
+- **BBS Tag Support** — Multi-network door games can now track players by their originating BBS. When a BBS connects with a tag (e.g. `[PPB]mark`), GHost3 builds a unique username for the drop file so that players from different BBSes are treated as distinct users. Five configurable modes are supported — see the `TagParsingMode` configuration option below.
+
 ## Features
 
 - ✅ Full RLogin protocol support
@@ -11,6 +15,7 @@ A modern C# implementation of a door server that accepts RLogin connections from
 - ✅ JSON configuration
 - ✅ Cross-platform (Windows/Linux)
 - ✅ Easy door configuration
+- ✅ BBS tag support for multi-network door games
 
 ## How It Works
 
