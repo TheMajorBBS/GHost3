@@ -3,6 +3,7 @@
   "RLoginPort": 5103,
   "DropFileDirectory": "C:\\GHost3\\NODES",
   "MaxSessions": 50,
+  "TagParsingMode": "Disabled",
   "Doors": [
     {
       "Code": "BBW",

@@ -35,7 +35,27 @@ GHost3.exe -debug
 | `RLoginPort` | int | `5103` | TCP port to listen on for RLogin connections. |
 | `DropFileDirectory` | string | | Directory where node subdirectories and drop files are created. |
 | `MaxSessions` | int | `10` | Maximum number of simultaneous door sessions. |
+| `TagParsingMode` | string | `"Disabled"` | BBS tag mode for multi-network door games. See **BBS Tag Support** below. |
 | `Doors` | array | | List of door definitions (see below). |
+
+## BBS Tag Support
+
+When multiple BBSes share a door game over a network, two users named `mark` on different BBSes would collide in the door game's player database. GHost3 can combine the originating BBS tag with the username in the drop file to make each player unique.
+
+The RLogin handshake sends the tagged username (e.g. `[PPB]mark`) in the server username field. GHost3 reads this and formats the drop file username according to `TagParsingMode`:
+
+| Mode | Drop File Username | Example |
+|------|--------------------|---------|
+| `Disabled` | Plain username (default) | `mark` |
+| `Prepend` | Tag prepended directly | `PPBmark` |
+| `PrependUnderscore` | Tag prepended with underscore | `PPB_mark` |
+| `Append` | Tag appended directly | `markPPB` |
+| `AppendUnderscore` | Tag appended with underscore | `mark_PPB` |
+
+Example `doorserver.json` entry:
+```json
+"TagParsingMode": "PrependUnderscore"
+```
 
 ### Sample doorserver.json
 
